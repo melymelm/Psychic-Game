@@ -1,0 +1,56 @@
+* {
+	box-sizing: border-box;
+	background-color: #000000;
+	font-family: Verdana, Geneva, sans-serif;
+	color: #ffffff;
+}
+/*
+#header_logo {
+	position: fixed;
+	width: 100%;
+	margin: 0 0 30px;
+}*/
+
+#header_section {
+	margin-left: 40px;
+	margin-top: 20px;
+	margin-bottom: 20px;	
+	margin-right: 40px;
+}
+
+#subHead {
+	margin-left: 40px;
+	margin-top: 20px;
+	margin-bottom: 20px;	
+	margin-right: 40px;
+}
+
+.main_logo {
+	width: 500px;
+	height: auto;
+	max-width: 100%;
+}
+
+h3 {
+	color: #ffffff;
+	border: 5px dotted #de044d;
+	float: right;
+	font-size: 25px;
+
+}
+
+#winLose {
+	float: left;
+	border: 1px solid #ffffff;
+	padding: 20px;
+	width: 100%;
+	max-width: 400px;
+	margin-bottom: 25px;
+	padding-left: 40px;
+}
+
+#win, #lost, #numGuess, #lettGuess {
+	font-weight: bold;
+
+}
+

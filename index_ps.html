@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+	<title>Psychic Game</title>
+</head>
+<body>
+
+<header id="header_section">
+	<h1>THE PSYCHIC GAME</h1>
+</header>
+	<section id="subHead">
+		<h2>Guess what letter I'm thinking of...</h2>
+	</section>
+
+	<section id="winLose">
+		<h4></h4>
+			<div id="win">Wins: </div>
+		<h4></h4>
+			<div id="lost">Losses: </div>
+		<h4></h4>
+			<div id="numGuess">Guesses left: 10</div>
+		<h4>Your Guesses so far:</h4>
+			<div id="lettGuess"><h4></h4></div>
+		
+	</section>
+
+
+	<script type="text/javascript">
+
+	//vars
+	var gameWon=0;
+	var gameLoss=0;
+	var guessLeft=10;
+	var charGuess=[];
+	var lettGuess=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+
+
+	 
+   
+
+
+	//functions
+
+
+
+	//new game
+	function newgame() {
+
+		
+
+		document.onkeyup = function(event) {
+
+			var userInput = String.fromCharCode(event.keyCode).toUpperCase();
+	        	console.log(userInput);
+
+	        for (var i=0; i<compGuess.length; i++) {
+
+		        	//computer and user don't match
+		        	if (userInput!=compGuess[i]) {
+			        		guessLeft--;
+			        		charGuess+=compGuess[i];
+			        		document.getElementById("numGuess").innerHTML = "Guesses Left: " + guessLeft;
+			        		document.getElementById("lettGuess").innerHTML += userInput + " ";
+			        }
+
+				    //computer guess and user guess match, tally win, restart game
+			        if (userInput===compGuess[i]) {
+			        		gameWon++;
+			        		document.getElementById("win").innerHTML = "Wins: " + gameWon;
+							console.log(gameWon);
+							reWriteStats();
+			        		return;
+			        }
+
+			        //0 guesses left, tally game loss, restart game
+			        if (guessLeft===0) {
+						    gameLoss++;
+						    document.getElementById("lost").innerHTML = "Losses: " + gameLoss;
+						    console.log(gameLoss);
+						    reWriteStats();
+						    return;
+					}
+
+
+		    }
+
+
+	    }
+
+	 }
+
+	 
+	newgame();
+
+	//rewrite stats
+	function reWriteStats() {
+		console.log("-------------")
+		console.log(guessLeft);
+		console.log("-------------")
+		console.log(charGuess);
+		console.log("-------------")
+
+		var compGuess = lettGuess[Math.floor(Math.random() * lettGuess.length)];
+		console.log(compGuess);
+	}
+
+ 	
+
+	</script>
+
+</body>
+</html>
