@@ -43,13 +43,22 @@
 
 
 	//functions
-
+	
+	//rewrite stats
+	function reWriteStats() {
+		console.log("-------------")
+		console.log(guessLeft);
+		console.log("-------------")
+		console.log(charGuess);
+		console.log("-------------")
+	}
 
 
 	//new game
 	function newgame() {
 
-		
+		var compGuess = lettGuess[Math.floor(Math.random() * lettGuess.length)];
+		console.log(compGuess);
 
 		document.onkeyup = function(event) {
 
@@ -95,17 +104,7 @@
 	 
 	newgame();
 
-	//rewrite stats
-	function reWriteStats() {
-		console.log("-------------")
-		console.log(guessLeft);
-		console.log("-------------")
-		console.log(charGuess);
-		console.log("-------------")
 
-		var compGuess = lettGuess[Math.floor(Math.random() * lettGuess.length)];
-		console.log(compGuess);
-	}
 
  	
 
